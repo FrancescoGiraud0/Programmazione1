@@ -161,6 +161,7 @@ el_2 = x.^2;
 
 % x*x'ha soluzione perchè moltiplica il vett riga per un vett colonna
 % delle stesse dim, quindi possibile calcolare il prodotto riga x colonna
+% ed il risultato sarà uno scalare
 xxt = x*x';
 
 % Non è possibile calcolare x*x perchè il numero di righe di x è diverso
