@@ -1,3 +1,8 @@
+%% Pulisci tutto
+clc
+close all
+clear all
+
 %% Punto A
 
 % A. Grafico della funzione arcotangente nell’intervallo [-4, 4].
@@ -5,25 +10,21 @@
 % Creazione vettore X con valori da -4 a 4 con step di 0.1 
 X = -4:0.1:4;
 
-% Inizio creazione grafico
-hold on
-
-% Titolo del grafico
-title('Grafico arctg(x)');
-
-% Attiva griglia
-grid on;
-
-% Nome degli assi x e y
-xlabel('x');
-ylabel('y');
+figure;
 
 % Stampa il grafico
 % atan(X):= vettore composto dai valori dell'arcotangente per ogni valore di X
 plot(X, atan(X));
 
-% Fine creazione grafico
-hold off
+% Titolo del grafico
+title('Grafico arctg(x)');
+
+% Nome degli assi x e y
+xlabel('x');
+ylabel('y');
+
+% Attiva griglia
+grid on;
 
 %% Punto B
 
@@ -35,8 +36,12 @@ X = -2*pi:0.1:2*pi;
 % Vettore composto dai valori del seno calcolati per ogni elemento di X
 SEN = sin(X);
 
-hold on
+figure;
 
+% Grafico 1/2 sin(x), '--r' indica linea tratto-punto rossa
+plot(X, (0.5)*SEN, '-.r');
+
+hold on
 % Limite assi del grafico, su ascissa va da -2*pi a 2*pi,
 % su ascissa da -2.5 a 2.5
 axis([-2*pi 2*pi -2.5 2.5]);
@@ -50,9 +55,6 @@ title('Grafici Seno');
 % Nomi degli assi
 xlabel('x');
 ylabel('y');
-
-% Grafico 1/2 sin(x), '--r' indica linea tratto-punto rossa
-plot(X, (0.5)*SEN, '-.r');
 
 % Grafico sin(x), '--b' indica linea tratteggiata blu
 plot(X, SEN, '--b');
@@ -173,14 +175,15 @@ X = 1:0.1:1000;
 % Creazione vettore k, che rappresenta l'insieme k
 k = [2 1 0.5];
 
+figure;
+
+plot(X, X.^k(1),'r');
+
 % Inizio creazione grafico
 hold on
 
 % Titolo del grafico, \in è il simbolo "appartiene" in LaTex
 title('Grafico x^k con k\in\{2,1,0.5\}')
-
-% Limita l'asse x da 1 a 1000 e l'asse y da 0 a 1000
-axis([1 1000 0 1000])
 
 % Inserisci griglia
 grid on
@@ -190,7 +193,6 @@ xlabel('x');
 ylabel('y');
 
 % Stampa i tre grafici colorati rispettivamente di rosso, blu e giallo
-plot(X, X.^k(1),'r');
 plot(X, X.^k(2),'b');
 plot(X, X.^k(3),'y');
 
@@ -209,29 +211,28 @@ X = 1:0.1:1000;
 % Creazione vettore k, che rappresenta l'insieme k
 k = [2 1 0.5];
 
-% Inizio creazione grafico
+figure;
+
+loglog(X, X.^k(1),'r');
+
 hold on
+% Stampa i tre grafici colorati rispettivamente di rosso, blu e giallo
+% con entrambi gli assi in scala logaritmica
+loglog(X, X.^k(2),'b');
+loglog(X, X.^k(3),'y');
 
 % Titolo del grafico, \in è il simbolo "appartiene" in LaTex
 title('Grafico x^k con k\in\{2,1,0.5\} in scala logaritmica')
 
-% Limita l'asse x da 1 a 1000 e l'asse y da 0 a 1000
-axis([1 1000 0 1000])
-
 % Inserisci griglia
 grid on
+
+% Limita l'asse x da 1 a 1000 e l'asse y da 0 a 1000
+axis([1 1000 0 10^5])
 
 % Nomina gli assi
 xlabel('x');
 ylabel('y');
 
-% Stampa i tre grafici colorati rispettivamente di rosso, blu e giallo
-% con entrambi gli assi in scala logaritmica
-loglog(X, X.^k(1),'r');
-loglog(X, X.^k(2),'b');
-loglog(X, X.^k(3),'y');
-
 % Inserisci legenda del grafico
 legend('x^2','x','\surdx');
-
-hold off
