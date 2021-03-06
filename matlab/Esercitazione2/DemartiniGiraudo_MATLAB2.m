@@ -222,13 +222,10 @@ loglog(X, X.^k(2),'b');
 loglog(X, X.^k(3),'y');
 
 % Titolo del grafico, \in è il simbolo "appartiene" in LaTex
-title('Grafico x^k con k\in\{2,1,0.5\} in scala logaritmica')
+title('Grafico x^k con k\in\{2,1,0.5\} in scala logaritmica');
 
 % Inserisci griglia
 grid on
-
-% Limita l'asse x da 1 a 1000 e l'asse y da 0 a 1000
-axis([1 1000 0 10^5])
 
 % Nomina gli assi
 xlabel('x');
