@@ -66,6 +66,7 @@ int main(){
         }
     }
 
+    // Ora che i valori sono in ordine, possono essere stampati
     cout << a << " " << b << " " << c << endl;
 
     return 0;
