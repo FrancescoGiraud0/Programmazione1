@@ -1,4 +1,4 @@
-/* Esercizio 2.1 C++
+/* Esercizio 2.3 C++
    Data: 12/03/2021
    Gruppo: DemartiniGiraudo
 
