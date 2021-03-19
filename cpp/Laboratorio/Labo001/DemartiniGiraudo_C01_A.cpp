@@ -53,7 +53,7 @@ int main(){
         // Controlla che la base minore sia minore o uguale alla base maggiore
         if(base_min<=base_magg){
             // Se minore
-            area = ((base_min+base_magg)*altezza)/2 ; // Calcola area del trapezioe
+            area = ((base_min+base_magg)*altezza)/2 ; // Calcola area del trapezio
             cout << "Area del trapezio: " << area << endl; // Stampa valore ottenuto
         }else{
             cout << "Errore: Inserita BASE MINORE > BASE MAGGIORE " << endl; // Stampa messaggio di errore
