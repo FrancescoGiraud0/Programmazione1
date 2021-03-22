@@ -16,11 +16,9 @@ standard output:
 
 using namespace std;
 
-const int DIM = 50; // Dimensione dell'array
-
 int main(){
     int n=0;                                                    // Numero di valori considerati
-    double vettore_num[DIM];                                    // Vettore dove salvare i valori in input
+    double in;                                                  // Variabile per i valori in input
     double sommatoria=0, produttoria=1, sommatoria_quadrati=0;  // Variabili accomulatori
     double media_ar = 0, media_geom = 0, deviazione=0;          // Variabili per le medie e per la std
 
@@ -35,34 +33,34 @@ int main(){
     }
 
     // Controllo numero di valori da gestire, deve essere compreso tra 0 e DIM (== 50)
-    if( (n<=0)||(n>DIM) ){
-        cout << "Errore: inserire un valore strettamente positivo minore di " << DIM << endl;
+    if(n<=0){
+        cout << "Errore: inserire un valore strettamente positivo" <<endl;
         return 0;
     }
 
-    for(int i=0; i<n; i++){
-        // Input dell'i-esimo valore del vettore
-        cout << "[" << i+1 << "] -> ";
-        cin >> vettore_num[i];
+    for(int i=1; i<=n; i++){
+        // Input dell'i-esimo valore
+        cout << "[" << i << "] -> ";
+        cin >> in;
 
-        // Controllo correttezza valori in input
+        // Controllo correttezza valore in input
         if(!cin){
             cout << "Errore: inserito un valore non valido" << endl;
             return 0;
         }
 
         // Controllo inserimento valore strettamente maggiore di 0
-        if(vettore_num[i]<=0){
+        if(in<=0){
             cout << "Errore: inserito un valore negativo" << endl;
             return 0;
         }
 
         // Incremento del valore sommatoria con ultimo valore in input
-        sommatoria  += vettore_num[i];  // Equivalente a sommatoria  = sommatoria  + vettore_num[i]
+        sommatoria  += in;  // Equivalente a sommatoria  = sommatoria  + in
         // Moltiplico valore produttoria per ultimo valore in input
-        produttoria *= vettore_num[i];  // Equivalente a produttoria = produttoria * vettore_num[i]
+        produttoria *= in;  // Equivalente a produttoria = produttoria * in
         // Incremento del valore sommatoria_quadrati con ultimo valore in input al quadrato
-        sommatoria_quadrati += pow(vettore_num[i], 2);
+        sommatoria_quadrati += pow(in, 2);
     }
 
     media_ar   = sommatoria / n; // Calcolo media aritmetica (n e' sicuramente diverso da 0)

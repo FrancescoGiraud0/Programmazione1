@@ -10,27 +10,14 @@ che potrebbe verificarsi durante l'esecuzione di questo programma (es: lettura c
 buon fine, N che non rispetta il vincolo di essere maggiore di 1, ...).
 */
 
-/*
-INT_MAX   = 2147483647
-LONG_MAX  = 9223372036854775807 
-LLONG_MAX = 9223372036854775807
-
-Quindi e' possibile calcolare il fattoriale fino al valore 12 (12! = 479001600), mentre dal
-valore 13 andra' in overflow.
-Per long long int fattoriale, è possibile calcolare il fattoriale fino a 20, mentre dal
-valore 21 andra' in overflow.
-*/
-
 #include <iostream>
 
 using namespace std;
 
-const int DIM = 50; // Dimensione dell'array
-
 int main(){
-    double vettore_num[DIM]; // Creazione del vettore di dimensione DIM = 50
-    int n=0;                 // Variabile n per numero di valori in input
-    double min=0, max=0;     // Variabili per salvare min e max
+    int n=0;              // Variabile n per numero di valori in input
+    double in;            // Variabile per input n valori
+    double min=0, max=0;  // Variabili per salvare min e max
 
     cout << "Inserire numero di valori: ";
     cin >> n;
@@ -42,15 +29,15 @@ int main(){
     }
 
     // Controllo numero di valori da gestire, deve essere compreso tra 0 e DIM (== 50)
-    if( (n<=0)||(n>DIM) ){
-        cout << "Errore: inserire un valore strettamente positivo minore di " << DIM << endl;
+    if((n<=0)){
+        cout << "Errore: inserire un valore strettamente positivo" << endl;
         return 0;
     }
 
-    for(int i=0; i<n; i++){
+    for(int i=1; i<=n; i++){
         // Input dell'i-esimo valore 
-        cout << "[" << i+1 << "] -> ";
-        cin >> vettore_num[i];
+        cout << "[" << i << "] -> ";
+        cin >> in;
 
         // Controllo correttezza valori in input
         if(!cin){
@@ -59,25 +46,25 @@ int main(){
         }
 
         // Controllo inserimento valore strettamente maggiore di 0
-        if(vettore_num[i]<=0){
+        if(in<=0){
             cout << "Errore: inserito un valore negativo" << endl;
             return 0;
         }
 
-        if(i==0){
+        if(i==1){
             // Per il primo ciclo assegno min e max al primo valore inserito
-            max = vettore_num[i];
-            min = vettore_num[i];
+            max = in;
+            min = in;
         }else{
             // Se non siamo al primo ciclo
-
-            if(max<vettore_num[i])
+            
+            if(max<in)
                 // Se max e' minore dell'ultimo valore inserito
-                max = vettore_num[i]; // l'ultimo valore diventa il nuovo max 
+                max = in; // l'ultimo valore diventa il nuovo max 
 
-            if(min>vettore_num[i])
+            if(min>in)
                 // Se min e' maggiore dell'ultimo valore inserito
-                min = vettore_num[i]; // l'ultimo valore diventa il nuovo min
+                min = in; // l'ultimo valore diventa il nuovo min
         }
     }
 
