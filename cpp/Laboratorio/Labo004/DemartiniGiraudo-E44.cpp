@@ -32,7 +32,7 @@ int main(){
         return 0;
     }
 
-    // Controllo numero di valori da gestire, deve essere compreso tra 0 e DIM (== 50)
+    // Controllo numero di valori da gestire, deve essere compreso > 0
     if(n<=0){
         cout << "Errore: inserire un valore strettamente positivo" <<endl;
         return 0;
