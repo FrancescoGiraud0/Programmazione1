@@ -93,7 +93,7 @@ int main(){
         cout << "Errore: Non e' possibile calcolare la media" << endl;
 
     // Stampa valore della media geometrica, se n>0
-    if(n>0)
+    if((n>0) || (prodotto!=0))
         cout << "Media geometrica = " << pow(prodotto, 1.0/n) << endl;
     else
         cout << "Errore: Non e' possibile calcolare la media geometrica" << endl;
