@@ -32,10 +32,14 @@ int main(){
     double array_valori[DIM];
     // Variabile per somma dei reciproci inizializzata a zero
     double somma_reciproci=0;
+    // Variabile per somma inizializzata a zero
+    double somma=0;
+    // Variabile per prodotto
+    double prodotto=1;
 
     // Input del numero di valori considerati
-    cout << "MEDIA ARMONICA DI N VALORI" << endl;
-    cout << "Inserire n: ";
+    cout << "MEDIE" << endl;
+    cout << "Inserire n (numero di valori): ";
     cin >> n;
 
     // Controllo errori in input
@@ -73,19 +77,32 @@ int main(){
     // Ciclo for per il calcolo della somma dei reciproci
     for(int i=0; i<n; i++){
         
-        if(array_valori[i]==0){
-            // Se il valore e' uguale a zero, non esiste il reciproco
-            cout << "Errore: Divisione per zero, impossibile calcolare reciproco" << endl;
-            // Allora non esiste media armonica, quindi termina programma
-            return 0;
-        }
-        
-        // Se valore diverso da zero somma il reciproco alla somma dei reciproci
-        somma_reciproci += 1/array_valori[i];
-    }
+        // Se valore diverso da zero, somma il reciproco alla somma dei reciproci
+        if(array_valori[i]!=0)
+            somma_reciproci += 1/array_valori[i];
 
-    // Stampa valore della media armonica, la somma dei reciproci sicuramente > 0
-    cout << "Media armonica = " << n/somma_reciproci << endl;
+        somma += array_valori[i];
+
+        prodotto *= array_valori[i];
+    }
+    
+    // Stampa valore della media, se n>0
+    if(n>0)
+        cout << "Media = " << somma/n << endl;
+    else
+        cout << "Errore: Non e' possibile calcolare la media" << endl;
+
+    // Stampa valore della media geometrica, se n>0
+    if(n>0)
+        cout << "Media geometrica = " << pow(prodotto, 1.0/n) << endl;
+    else
+        cout << "Errore: Non e' possibile calcolare la media geometrica" << endl;
+
+    // Stampa valore della media armonica, se la somma dei reciproci != 0
+    if(somma_reciproci!=0)
+        cout << "Media armonica = " << n/somma_reciproci << endl;
+    else
+        cout << "Errore: Non e' possibile calcolare la media armonica" << endl;
 
     return 0;
 }
