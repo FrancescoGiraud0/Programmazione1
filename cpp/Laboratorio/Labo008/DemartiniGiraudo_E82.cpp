@@ -136,7 +136,7 @@ int main(){
 
                         // Se il dato e' maggiore o uguale al massimo
                         if(massimo <= dato){
-                            // dato e' il nuovo massimo e riga e la nuova riga_massimo
+                            // dato e' il nuovo massimo e riga e' la nuova riga_massimo
                             massimo = dato;
                             riga_massimo = riga;
                         }

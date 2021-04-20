@@ -96,7 +96,7 @@ int main(){
 
         // Assegna indice di trasformazione t
         // Se op=0, oppure op=2 e i pari allora:
-        //      t=0 -> trasformazione carattere in maiscolo  (riga 0 matrice trasf)
+        //      t=0 -> trasformazione carattere in maiuscolo (riga 0 matrice trasf)
         // Se op=1, oppure op=2 e i dispari allora:
         //      t=1 -> trasformazione carattere in minuscolo (riga 1 matrice trasf)
         t  = (op<=1)? op : i%2;
