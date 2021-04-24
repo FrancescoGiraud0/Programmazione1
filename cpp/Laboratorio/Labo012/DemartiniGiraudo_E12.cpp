@@ -19,12 +19,11 @@
 using namespace std;
 
 /**
- * Dato un numero decimale intero in input restituisce 
- * il corrispondente numero romano.
- *
- * @return numero romano (string)
- *
- * @param[in] decimale un intero decimale positivo
+ * Funzione che restituisce il valore decimale del numero romano inserito
+ * come stringa. Restituisce -1 se non e' un numero valido.
+ * 
+ * @param[in] romano stringa con numero romano tutta maiuscola
+ * @return (int) numero decimale se stringa valida, altrimenti -1
  */
 string romano(int decimale);
 
@@ -33,9 +32,8 @@ string romano(int decimale);
  * corrispondente numero decimale, se esso e' un numero 
  * romano ben formato.
  *
- * @return (int) numero romano convertito o -1
- *
  * @param[in] romano una stringa con il numero romano
+ * @return (int) numero romano convertito o -1
  */
 int decimale(string romano);
 
@@ -105,13 +103,6 @@ int main(){
   return 0;
 }
 
-/**
- * Funzione che restituisce il valore decimale del numero romano inserito
- * come stringa. Restituisce -1 se non e' un numero valido.
- * 
- * @param[in] romano stringa con numero romano tutta maiuscola
- * @return (int) numero decimale se stringa valida, altrimenti -1
- */
 int decimale(string romano){
   int decimale = 0, cifra_max;
   // contatore per valori successivi, serve per trovare valori non validi
