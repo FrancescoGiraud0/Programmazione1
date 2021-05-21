@@ -1,7 +1,7 @@
 /**
-  *Laboratorio 12 C++
-  *@author DemartiniGiraudo
-  *@file DemartiniGiraudo_E12.cpp
+  * Laboratorio 12 C++
+  * @author DemartiniGiraudo
+  * @file DemartiniGiraudo_E12.cpp
   *
   * Sviluppare due funzioni C++ per automatizzare la conversione tra
   * rappresentazione decimale e romana dei numeri.  Una funzione

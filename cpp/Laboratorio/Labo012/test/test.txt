@@ -1,3 +1,6 @@
+File di output 50 casi di numeri romani e 50 errori con relativa spiegazione.
+Abbiamo generato 50 numeri romani e 50 combinazioni che non sono numeri romani.
+Alleghiamo anche il sorgente python con cui abbiamo generato le combinazioni.
 I = 1
 L = 50
 V = 5
