@@ -1,7 +1,6 @@
 /**
  * Giraudo Francesco
  * Simulazione Esame C++
- * Matricola S4982946
  */
 
 #include <iostream>
